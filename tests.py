@@ -1,12 +1,6 @@
-from functions.get_files_info import get_files_info
+from functions.get_file_content import get_file_content
 
-def print_data(working_directory, directory):
-    print(f' Result for current directory:\n {get_files_info(working_directory, directory)}')
-
-print_data("calculator", ".")
-
-print_data("calculator", "pkg")
-
-print_data("calculator", "/bin")
-
-print_data("calculator", "../")
+print(get_file_content("calculator", "main.py"))
+print(get_file_content("calculator", "pkg/calculator.py"))
+print(get_file_content("calculator", "/bin/cat"))
+print(get_file_content("calculator", "pkg/does_not_exist.py"))
